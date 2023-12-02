@@ -31,7 +31,6 @@ def number_catcher(line):
                     line_number_list.append(value)
                     line_characters = line_characters[-1]
                     break
-            print(line_characters)
     return line_number_list
     
 
