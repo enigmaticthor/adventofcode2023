@@ -4,6 +4,7 @@ for line in file:
     line = line.strip('\n')
     calibration.append(line)
 file.close()
+
 text_numbers = {
     'one': '1',
     'two': '2',
@@ -15,6 +16,7 @@ text_numbers = {
     'eight': '8',
     'nine': '9'
 }
+
 def number_catcher(line):
     line_number_list = []
     line_characters = ''
@@ -33,7 +35,6 @@ def number_catcher(line):
                     break
     return line_number_list
     
-
 numbers = []
 for line in calibration:
     line_numbers = number_catcher(line)
