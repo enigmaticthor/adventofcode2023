@@ -4,6 +4,16 @@ for line in file:
     line = line.strip('\n')
     calibration.append(line)
 file.close()
-print(calibration)
-#for line in calibration:
-    #for x in line:
+
+def number_catcher(test):
+    return test.isnumeric()
+
+numbers = []
+for line in calibration:
+    line_numbers = []
+    for x in line:
+        if x.isnumeric():
+            line_numbers.append(x)
+    line_number = line_numbers[0] + line_numbers[-1]
+    numbers.append(int(line_number))
+print(sum(numbers))
