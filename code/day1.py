@@ -1,4 +1,7 @@
-file=open("./input/day1.txt","r")
+from pathlib import Path
+input_folder = Path("../input")
+input_file = input_folder / "day1.txt"
+file = open(input_file,"r")
 calibration = []
 for line in file:
     line = line.strip('\n')
