@@ -33,6 +33,25 @@ for line in file:
 file.close()
 valid_games = []
 invalid_games = []
+
+def get_validity(color):
+    valid = True
+    color_split = color.split(' ')
+    if "red" in color_split[1]:
+        if int(color_split[0]) > 12:
+            valid = False
+    elif "green" in color_split[1]:
+        if int(color_split[0]) > 13:
+            valid = False
+    elif "blue" in color_split[1]:
+        if int(color_split[0]) > 14:
+            valid = False
+    return valid
+
+def get_set_power(game_sets):
+    set_value = ''
+    return set_value
+
 for game_id, game_sets in games.items():
     valid = True
     for pull in game_sets:
@@ -41,22 +60,10 @@ for game_id, game_sets in games.items():
         for color in pull:
             if valid == False:
                 break
-            color_split = color.split(' ')
-            if "red" in color_split[1]:
-                if int(color_split[0]) > 12:
-                    valid = False
-                    break
-            elif "green" in color_split[1]:
-                if int(color_split[0]) > 13:
-                    valid = False
-                    break
-            elif "blue" in color_split[1]:
-                if int(color_split[0]) > 14:
-                    valid = False
-                    break
-
+            valid = get_validity(color)
     if valid == True:
         valid_games.append(int(game_id))
     else:
         invalid_games.append(int(game_id))
+
 print(sum(valid_games))
