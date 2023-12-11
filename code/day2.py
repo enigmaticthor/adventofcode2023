@@ -87,7 +87,5 @@ for game_id, game_sets in games.items():
     else:
         invalid_games.append(int(game_id))
 
-print("Part 1: ")
-print(sum(valid_games)) #part 1 solution
-print("Part 2:")
-print(sum(game_values)) #part 2 solution
+print(f"Part 1: {sum(valid_games)}") #part 1 solution
+print(f"Part 2: {sum(game_values)}") #part 2 solution
